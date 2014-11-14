@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>shell-keybinding-modes</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Shell Reference Manual">
+<link rel="up" href="ch06.html" title="Integration helpers and utilities">
+<link rel="prev" href="shell-ShellGlobal.html" title="ShellGlobal">
+<link rel="next" href="shell-ShellWM.html" title="ShellWM">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="shell-ShellGlobal.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Shell Reference Manual</th>
+<td><a accesskey="n" href="shell-ShellWM.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#shell-shell-keybinding-modes.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#shell-shell-keybinding-modes.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#shell-shell-keybinding-modes.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="shell-shell-keybinding-modes"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="shell-shell-keybinding-modes.top_of_page"></a>shell-keybinding-modes</span></h2>
+<p>shell-keybinding-modes</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="shell-shell-keybinding-modes.synopsis"></a><h2>Synopsis</h2>
+<a name="ShellKeyBindingMode"></a><pre class="synopsis">enum                <a class="link" href="shell-shell-keybinding-modes.html#ShellKeyBindingMode-enum" title="enum ShellKeyBindingMode">ShellKeyBindingMode</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-keybinding-modes.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GFlags
+   +----ShellKeyBindingMode
+</pre>
+</div>
+<div class="refsect1">
+<a name="shell-shell-keybinding-modes.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="shell-shell-keybinding-modes.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="ShellKeyBindingMode-enum"></a><h3>enum ShellKeyBindingMode</h3>
+<pre class="programlisting">typedef enum {
+  SHELL_KEYBINDING_MODE_NONE          = 0,
+  SHELL_KEYBINDING_MODE_NORMAL        = 1 &lt;&lt; 0,
+  SHELL_KEYBINDING_MODE_OVERVIEW      = 1 &lt;&lt; 1,
+  SHELL_KEYBINDING_MODE_LOCK_SCREEN   = 1 &lt;&lt; 2,
+  SHELL_KEYBINDING_MODE_UNLOCK_SCREEN = 1 &lt;&lt; 3,
+  SHELL_KEYBINDING_MODE_LOGIN_SCREEN  = 1 &lt;&lt; 4,
+  SHELL_KEYBINDING_MODE_MESSAGE_TRAY  = 1 &lt;&lt; 5,
+  SHELL_KEYBINDING_MODE_SYSTEM_MODAL  = 1 &lt;&lt; 6,
+  SHELL_KEYBINDING_MODE_LOOKING_GLASS = 1 &lt;&lt; 7,
+  SHELL_KEYBINDING_MODE_TOPBAR_POPUP  = 1 &lt;&lt; 8,
+
+  SHELL_KEYBINDING_MODE_ALL = ~0,
+} ShellKeyBindingMode;
+</pre>
+<p>
+Controls in which GNOME Shell states a keybinding should be handled.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-NONE:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_NONE</code></span></p></td>
+<td>block keybinding
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-NORMAL:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_NORMAL</code></span></p></td>
+<td>allow keybinding when in window mode,
+    e.g. when the focus is in an application window
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-OVERVIEW:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_OVERVIEW</code></span></p></td>
+<td>allow keybinding while the overview
+    is active
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-LOCK-SCREEN:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_LOCK_SCREEN</code></span></p></td>
+<td>allow keybinding when the screen
+    is locked, e.g. when the screen shield is shown
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-UNLOCK-SCREEN:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_UNLOCK_SCREEN</code></span></p></td>
+<td>allow keybinding in the unlock
+    dialog
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-LOGIN-SCREEN:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_LOGIN_SCREEN</code></span></p></td>
+<td>allow keybinding in the login screen
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-MESSAGE-TRAY:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_MESSAGE_TRAY</code></span></p></td>
+<td>allow keybinding while the message
+    tray is popped up
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-SYSTEM-MODAL:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_SYSTEM_MODAL</code></span></p></td>
+<td>allow keybinding when a system modal
+    dialog (e.g. authentification or session dialogs) is open
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-LOOKING-GLASS:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_LOOKING_GLASS</code></span></p></td>
+<td>allow keybinding in looking glass
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-TOPBAR-POPUP:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_TOPBAR_POPUP</code></span></p></td>
+<td>allow keybinding while a top bar menu
+    is open
+</td>
+</tr>
+<tr>
+<td><p><a name="SHELL-KEYBINDING-MODE-ALL:CAPS"></a><span class="term"><code class="literal">SHELL_KEYBINDING_MODE_ALL</code></span></p></td>
+<td>always allow keybinding
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18.1</div>
+</body>
+</html>
